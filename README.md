@@ -1,4 +1,24 @@
-# 豆包商城 API 文档
+# qaqmall API 文档
+
+## 超前声明
+
+项目可能没有清洗的特别好，就是某些信息可能还用的我测试的时候的，然后要是有错尽量能自己发现的就发现然后pr告诉我（如果可以），另外就是每个文档几乎都是我让ai过滤了一遍，几乎注释还是比较全面的~~反正我是不喜欢写注释除了非常必要~~，当然你可能发现非常逆天的代码的时候那可能是我fvv而已《》
+
+基本上这个项目简单的实现了一下，就是分发校验身份令牌（token）其实就jwt实现了，然后用户服务和商品服务：
+
+就是这玩意
+
+![image](https://github.com/user-attachments/assets/2dcbd36a-5b41-4bc0-9920-51f404a4ed44)
+
+应该是全实现了，购物车也全实现了，然后订单服务那里基本上吧就是实现了，但是有没有bug我不知道，后续我肯定继续优化
+
+支付没怎么做，就做了小模块模拟一下，就是为了订单才做的，然后ai模型的话我做完了查询，模拟自动下单得后来再对接，现在做没啥用
+
+protobuf我是没用的，这面向前端也不是测试项目用个蛋proto，我才不用呢，还有那个ai的 Eino 框架，不是bro有啥用啊，你就查询一个你还用上框架了？反正这玩意我也没用。
+
+readme下面可能有些错误，但是我测试基本上还可以，有问题再说吧
+
+---
 
 ## 基本信息
 
@@ -16,7 +36,7 @@
 ### 配置项
 项目运行需要以下配置：
 
-1. 数据库配置
+1. 数据库配置（可以换成你实际的，这是我在测试的时候的配置而已awa）
 ```env
 DB_HOST=localhost
 DB_PORT=3306
@@ -41,11 +61,11 @@ OPENAI_API_URL=https://api.openai.com/v1/chat/completions
 
 1. 克隆项目
 ```bash
-git clone [项目地址]
+git clone https://github.com/alltobebetter/G-x2waeoe/
 cd qaqmall
 ```
 
-2. 初始化数据库
+2. 初始化数据库（Windows系统执行无效）
 ```bash
 mysql -u root -p < scripts/init_database.sql
 ```
